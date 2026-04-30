@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import FloatingButtons from "./components/FloatingButtons";
 
 const geistSans = Geist({
   variable: "--font-sans",
@@ -74,6 +75,8 @@ export default function RootLayout({
       <body className="bg-[#0B0B0F] text-white font-sans antialiased">
         <Navbar/>
         {children}
+         <FloatingButtons />
+
         <Footer/>
       </body>
     </html>
