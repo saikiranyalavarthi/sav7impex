@@ -24,3 +24,28 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* SMOOTH SCROLL */
+html {
+  scroll-behavior: smooth;
+}
+
+/* GOLD GRADIENT TEXT */
+.gold-text {
+  background: linear-gradient(90deg, #facc15, #fde68a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* GLOW EFFECT */
+.glow {
+  box-shadow: 0 0 40px rgba(255, 215, 0, 0.2);
+}
+
+/* HOVER SCALE */
+.hover-scale {
+  transition: 0.3s;
+}
+.hover-scale:hover {
+  transform: scale(1.05);
+}
