@@ -29,13 +29,13 @@ export const metadata: Metadata = {
     "Precious Metals Export",
   ],
   authors: [{ name: "SAV7 IMPEX" }],
-  metadataBase: new URL("https://yourdomain.com"), // change later
+  metadataBase: new URL("https://sav7impex.in"), // change later
 
   openGraph: {
     title: "SAV7 IMPEX PRIVATE LIMITED",
     description:
       "Trusted gold import export company in India. GST & IEC certified global trading.",
-    url: "https://yourdomain.com",
+    url: "https://sav7impex.in",
     siteName: "SAV7 IMPEX",
     images: [
       {

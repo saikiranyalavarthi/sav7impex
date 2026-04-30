@@ -56,7 +56,7 @@ export default function CTA() {
           >
             {/* WHATSAPP BUTTON */}
             <a
-              href="https://wa.me/919133633327"
+              href="https://wa.me/919290934388"
               target="_blank"
               className="relative px-8 py-4 rounded-xl bg-gradient-to-r from-green-400 to-green-600 text-black font-semibold hover:scale-110 transition"
             >

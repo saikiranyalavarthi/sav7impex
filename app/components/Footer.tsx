@@ -73,13 +73,13 @@ export default function Footer() {
           <h3 className="text-white font-semibold mb-4">Contact</h3>
           <ul className="space-y-2 text-sm">
             <li>Hyderabad, Telangana, India</li>
-            <li>Email: info@sav7impex.com</li>
-            <li>Phone: +91 91336 33327</li>
+            <li>Email: sav7impex@gmail.com</li>
+            <li>Phone: +91 92909 34388</li>
           </ul>
 
           {/* CTA */}
           <a
-            href="https://wa.me/919133633327"
+            href="https://wa.me/919290934388"
             target="_blank"
             className="relative inline-block mt-4 px-6 py-3 bg-gradient-to-r from-green-400 to-green-600 text-black rounded-lg font-semibold hover:scale-110 transition"
           >
