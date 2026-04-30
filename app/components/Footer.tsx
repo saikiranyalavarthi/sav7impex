@@ -31,11 +31,7 @@ export default function Footer() {
           </p>
 
           {/* SOCIAL */}
-          <div className="flex gap-4 mt-6 text-lg">
-            <a href="#" className="hover:text-yellow-400 transition">🌐</a>
-            <a href="#" className="hover:text-yellow-400 transition">📧</a>
-            <a href="#" className="hover:text-yellow-400 transition">📱</a>
-          </div>
+       
         </div>
 
         {/* QUICK LINKS */}

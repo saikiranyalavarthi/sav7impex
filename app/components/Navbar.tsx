@@ -35,7 +35,7 @@ export default function Navbar() {
         {/* LOGO */}
         <Link href="/" className="text-xl font-bold tracking-wide relative">
           <span className="text-white">SAV7</span>
-          <span className="text-yellow-400"> IMPEX</span>
+          <span className="text-yellow-400"> IMPEX PRIVATE LIMITED</span>
 
           {/* GLOW */}
           <span className="absolute inset-0 blur-xl bg-yellow-400/20 opacity-0 hover:opacity-100 transition"></span>
