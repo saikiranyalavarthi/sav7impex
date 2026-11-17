@@ -71,12 +71,12 @@ export default function Footer() {
         {/* CONTACT */}
         <div className="flex flex-col gap-3">
           <h4 className="mb-2 text-[13px] font-bold text-white">Get In Touch</h4>
-          <span className="text-[11px] text-[#aab9c7]">Hyderabad, Telangana, India</span>
+          <span className="text-[11px] text-[#aab9c7]">2nd Floor, Plot No 278, Srinivas Nagar, Housing Colony, 4th Lane,Nizampet, Hyderabad, Hyderabad, Telangana, 500090</span>
           <a href="tel:+919290934388" className="text-[11px] text-[#aab9c7] transition hover:text-[#55d6a4]">
             +91 92909 34388
           </a>
-          <a href="mailto:sav7impex@gmail.com" className="break-all text-[11px] text-[#aab9c7] transition hover:text-[#55d6a4]">
-            sav7impex@gmail.com
+          <a href="mailto:info@sav7impex.in" className="break-all text-[11px] text-[#aab9c7] transition hover:text-[#55d6a4]">
+            info@sav7impex.in
           </a>
           <a href="https://www.sav7impex.in/" className="text-[11px] text-[#aab9c7] transition hover:text-[#55d6a4]">
             www.sav7impex.in

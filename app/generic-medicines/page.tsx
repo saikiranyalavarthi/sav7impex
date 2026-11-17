@@ -1,6 +1,7 @@
 
 import type { Metadata } from "next";
 import Link from "next/link";
+import GenericMedicineCatalogue from "../components/GenericMedicineCatalogue";
 
 const siteUrl = "https://www.sav7impex.in";
 const pageUrl = `${siteUrl}/generic-medicines`;
@@ -334,7 +335,7 @@ export default function GenericMedicinesPage() {
           </div>
         </div>
       </section>
-
+      <GenericMedicineCatalogue />
       {/* CATEGORIES */}
       <section className="bg-[#f7f9fb] px-5 py-20 sm:px-8 lg:py-24">
         <div className="mx-auto max-w-7xl">

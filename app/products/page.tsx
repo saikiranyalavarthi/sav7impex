@@ -1,6 +1,7 @@
 
 import type { Metadata } from "next";
 import Link from "next/link";
+import GenericMedicineCatalogue from "../components/GenericMedicineCatalogue";
 
 export const metadata: Metadata = {
   title: "Products | Gold, Silver & Pharmaceutical Products | SAV7 IMPEX",
@@ -110,15 +111,7 @@ const pharmaProducts = [
       "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=1000&q=85",
     specs: ["Tablets", "Capsules", "Injectables"],
   },
-  {
-    tag: "ACTIVE INGREDIENTS",
-    title: "APIs & Intermediates",
-    description:
-      "Active pharmaceutical ingredient and intermediate product enquiries for pharmaceutical manufacturing and sourcing requirements.",
-    image:
-      "https://images.unsplash.com/photo-1581093458791-9d15482442f5?auto=format&fit=crop&w=1000&q=85",
-    specs: ["Bulk enquiries", "API sourcing", "Intermediates"],
-  },
+  
   {
     tag: "FORMULATIONS",
     title: "Finished Formulations",
@@ -607,7 +600,7 @@ export default function ProductsPage() {
           </div>
         </div>
       </section>
-
+  <GenericMedicineCatalogue />
       {/* THERAPEUTIC SEGMENTS */}
       <section className="px-5 py-20 sm:px-8 lg:py-28">
         <div className="mx-auto max-w-7xl">

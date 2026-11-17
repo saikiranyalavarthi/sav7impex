@@ -1,5 +1,6 @@
 
 import Link from "next/link";
+import GenericMedicineCatalogue from "./GenericMedicineCatalogue";
 
 const goldProducts = [
   {
@@ -216,7 +217,7 @@ export default function Products() {
             </div>
           </div>
         </div>
-
+  <GenericMedicineCatalogue />
         {/* Bottom information banner */}
         <div className="mt-10 overflow-hidden rounded-2xl border border-[#e7ecf1] bg-white p-6 shadow-sm sm:p-8">
           <div className="flex flex-col items-center justify-between gap-5 text-center sm:flex-row sm:text-left">
