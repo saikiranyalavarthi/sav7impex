@@ -1,126 +1,216 @@
-"use client";
-
-import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden py-24">
-
-      {/* BACKGROUND GRADIENT */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0B0B0F] via-[#121218] to-black" />
-
-      {/* FLOATING GOLD BLOBS */}
-      <motion.div
-        animate={{ x: [0, 50, 0], y: [0, -50, 0] }}
-        transition={{ duration: 10, repeat: Infinity }}
-        className="absolute w-[500px] h-[500px] bg-yellow-500/20 blur-[150px] rounded-full top-[-100px] left-[-100px]"
+    <section className="relative overflow-hidden bg-white px-[7%] pb-16 pt-12 md:pb-20 md:pt-16 lg:pt-20">
+      {/* Subtle background accent */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-[#00875a]/5 blur-3xl"
       />
-      <motion.div
-        animate={{ x: [0, -40, 0], y: [0, 40, 0] }}
-        transition={{ duration: 12, repeat: Infinity }}
-        className="absolute w-[400px] h-[400px] bg-yellow-400/10 blur-[120px] rounded-full bottom-[-100px] right-[-100px]"
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-40 -left-40 h-[500px] w-[500px] rounded-full bg-[#b68b31]/5 blur-3xl"
       />
 
-      {/* PARTICLES */}
-      <div className="absolute inset-0 opacity-20">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-yellow-400 rounded-full"
-            initial={{ y: "100%", opacity: 0 }}
-            animate={{ y: "-100%", opacity: [0, 1, 0] }}
-            transition={{
-              duration: 5 + i,
-              repeat: Infinity,
-              delay: i * 0.3,
-            }}
-            style={{
-              left: `${Math.random() * 100}%`,
-            }}
+      <div className="relative mx-auto grid max-w-[1450px] grid-cols-1 items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+        {/* ═══════════ LEFT — CONTENT ═══════════ */}
+        <div>
+          {/* Top badge */}
+          <span className="mb-6 inline-flex items-center gap-2.5 rounded-full bg-[#eaf7f1] px-4 py-2.5 text-[10px] font-extrabold tracking-wider text-[#00875a]">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#00875a] opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#00875a]" />
+            </span>
+            INDIA BASED · GLOBAL TRADE · SINCE 2009
+          </span>
+
+          {/* H1 */}
+          <h1 className="font-['Manrope'] text-[38px] font-extrabold leading-[1.12] tracking-tight text-[#091c30] sm:text-[44px] md:text-[52px] lg:text-[60px] xl:text-[67px]">
+            Connecting Global
+            <br className="hidden sm:block" /> Markets Through{" "}
+            <span className="text-[#00875a]">Gold, Pharma</span>
+            <br className="hidden sm:block" /> &{" "}
+            <span className="relative inline-block text-[#00875a]">
+              International Trade
+              <svg
+                className="absolute -bottom-1 left-0 w-full"
+                viewBox="0 0 300 12"
+                fill="none"
+                preserveAspectRatio="none"
+                aria-hidden
+              >
+                <path
+                  d="M2 9C60 4 120 2 180 3C220 4 260 6 298 9"
+                  stroke="#b68b31"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  opacity="0.6"
+                />
+              </svg>
+            </span>
+            .
+          </h1>
+
+          {/* Description */}
+          <p className="mt-6 max-w-[600px] text-[15px] leading-relaxed text-[#718096] md:text-base">
+            SAV7 IMPEX PRIVATE LIMITED is a diversified India-based import and
+            export company connecting global opportunities across{" "}
+            <strong className="font-semibold text-[#102b46]">gold bullion</strong>,{" "}
+            <strong className="font-semibold text-[#102b46]">silver and precious metals</strong>,{" "}
+            <strong className="font-semibold text-[#102b46]">pharmaceuticals</strong> and{" "}
+            <strong className="font-semibold text-[#102b46]">healthcare products</strong>{" "}
+            — serving 40+ countries with certified, insured and fully compliant trade.
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <Link
+              href="#divisions"
+              className="group inline-flex min-h-[52px] items-center justify-center gap-2 rounded-md bg-[#00875a] px-6 text-sm font-bold text-white shadow-lg shadow-[#00875a]/20 transition hover:-translate-y-0.5 hover:bg-[#102b46] hover:shadow-xl"
+            >
+              Explore Our Businesses
+              <span className="transition-transform group-hover:translate-x-0.5">↗</span>
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-md border border-[#e7ecf1] bg-white px-6 text-sm font-bold text-[#102b46] transition hover:border-[#00875a] hover:text-[#00875a]"
+            >
+              Global Business Enquiry
+            </Link>
+          </div>
+
+          {/* Trust points */}
+          <div className="mt-8 flex flex-wrap gap-x-5 gap-y-2.5">
+            {[
+              "Gold & Precious Metals",
+              "Pharmaceutical & Healthcare",
+              "India & Global Markets",
+              "WHO-GMP · LBMA Aligned",
+            ].map((point) => (
+              <span
+                key={point}
+                className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-[#52677a]"
+              >
+                <svg
+                  className="h-3.5 w-3.5 flex-shrink-0 text-[#00875a]"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  viewBox="0 0 24 24"
+                  aria-hidden
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                {point}
+              </span>
+            ))}
+          </div>
+
+          {/* Mini stats strip */}
+          <div className="mt-10 grid grid-cols-3 gap-4 border-t border-[#e7ecf1] pt-6 sm:max-w-md">
+            {[
+              ["40+", "COUNTRIES"],
+              ["500+", "PARTNERS"],
+              ["15+", "YEARS"],
+            ].map(([num, label]) => (
+              <div key={label}>
+                <div className="font-['Manrope'] text-xl font-extrabold text-[#102b46] sm:text-2xl">
+                  {num}
+                </div>
+                <div className="mt-0.5 text-[9px] font-bold tracking-wider text-[#718096]">
+                  {label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ═══════════ RIGHT — IMAGE ═══════════ */}
+        <div className="relative p-3 lg:p-4">
+          {/* Decorative frame */}
+          <div
+            aria-hidden
+            className="absolute -inset-2 rounded-2xl border border-[#b68b31]/20"
           />
-        ))}
+
+          {/* Main photo */}
+          <div
+            className="relative h-[340px] overflow-hidden rounded-xl bg-cover bg-center shadow-2xl shadow-[#091c30]/25 sm:h-[400px] md:h-[460px] lg:h-[500px]"
+            style={{
+              backgroundImage: `url("https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=1200&q=85")`,
+            }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-t from-[#091c30]/70 via-[#091c30]/20 to-transparent" />
+
+            {/* Top-right label */}
+            <div className="absolute right-4 top-4 rounded-full bg-white/95 px-3.5 py-1.5 backdrop-blur-sm">
+              <span className="text-[9px] font-extrabold tracking-wider text-[#b68b31]">
+                LBMA ALIGNED
+              </span>
+            </div>
+
+            {/* Bottom floating card */}
+            <div className="absolute bottom-4 left-4 right-4 flex items-center gap-3 rounded-lg bg-white/95 p-3.5 shadow-xl backdrop-blur-sm sm:bottom-5 sm:left-5 sm:right-auto sm:max-w-[280px] sm:p-4">
+              <span className="grid h-11 w-11 flex-shrink-0 place-items-center rounded-lg bg-[#eaf7f1] text-xl">
+                🌐
+              </span>
+              <div className="min-w-0">
+                <strong className="block truncate text-[12px] font-bold text-[#102b46]">
+                  Global Business Network
+                </strong>
+                <small className="mt-0.5 block text-[10px] text-[#718096]">
+                  Sourcing · Compliance · Logistics
+                </small>
+              </div>
+            </div>
+          </div>
+
+          {/* Caption row */}
+          <div className="mt-4 flex items-center justify-between gap-3 text-[9px] font-extrabold tracking-wider text-[#718096]">
+            <span className="truncate">GOLD · SILVER · PHARMA · PRECIOUS METALS</span>
+            <span className="flex-shrink-0">EST. 2009</span>
+          </div>
+
+          {/* Trust badge */}
+          <div className="absolute -left-2 top-8 rounded-lg bg-white px-3 py-2 shadow-lg lg:-left-4">
+            <div className="flex items-center gap-2">
+              <span className="grid h-7 w-7 place-items-center rounded-full bg-[#00875a] text-[11px] text-white">
+                ✓
+              </span>
+              <div>
+                <div className="text-[9px] font-extrabold tracking-wider text-[#102b46]">
+                  CERTIFIED
+                </div>
+                <div className="text-[8px] text-[#718096]">WHO-GMP</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      {/* CONTENT */}
-      <div className="relative max-w-6xl text-center">
-
-        {/* HEADING */}
-        <motion.h1
-          initial={{ opacity: 0, y: 60 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-5xl md:text-7xl font-bold leading-tight"
-        >
-          <span className="bg-gradient-to-r from-yellow-400 via-yellow-200 to-yellow-500 bg-clip-text text-transparent animate-pulse">
-            Gold & Silver Import Export
-          </span>
-
-          <span className="block text-white mt-4">
-            SAV7 IMPEX PRIVATE LIMITED
-          </span>
-        </motion.h1>
-
-        {/* SUBTEXT (SEO BOOSTED) */}
-        <motion.p
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="mt-6 text-gray-300 max-w-2xl mx-auto text-lg"
-        >
-          Leading gold import export company in India specializing in precious
-          metals trading, silver exports, and global commodity supply. Based in
-          Hyderabad with GST, IEC & BIS certified operations for international
-          trade.
-        </motion.p>
-
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="mt-10 flex flex-col sm:flex-row justify-center gap-4"
-        >
-          <a
-            href="https://wa.me/919290934388"
-            target="_blank"
-            className="relative px-8 py-4 rounded-xl bg-gradient-to-r from-green-400 to-green-600 text-black font-semibold hover:scale-110 transition"
-          >
-            WhatsApp Now
-
-            {/* GLOW */}
-            <span className="absolute inset-0 bg-green-400 blur-xl opacity-20"></span>
-          </a>
-
-          <a
-            href="#services"
-            className="px-8 py-4 rounded-xl border border-white/20 hover:bg-white/10 hover:scale-105 transition"
-          >
-            Explore Services
-          </a>
-        </motion.div>
-
-        {/* TRUST TAGS */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.7 }}
-          className="mt-12 flex flex-wrap justify-center gap-6 text-sm text-gray-400"
-        >
-          <span>✔ GST Certified</span>
-          <span>✔ IEC Registered</span>
-          <span>✔ BIS Hallmark Approved</span>
-          <span>✔ Global Trade Authorized</span>
-        </motion.div>
+      {/* ═══════════ BOTTOM STRIP ═══════════ */}
+      <div className="relative mx-auto mt-16 max-w-[1450px]">
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 rounded-lg border border-[#e7ecf1] bg-[#f7f9fb] px-5 py-4">
+          {[
+            "GOLD & PRECIOUS METALS",
+            "PHARMACEUTICALS",
+            "IMPORT & EXPORT",
+            "GLOBAL COMMODITY TRADE",
+          ].map((item, i, arr) => (
+            <div key={item} className="flex items-center gap-6">
+              <span className="text-[9px] font-extrabold tracking-wider text-[#102b46] sm:text-[10px]">
+                {item}
+              </span>
+              {i < arr.length - 1 && (
+                <span className="text-sm text-[#b68b31]" aria-hidden>
+                  ✳
+                </span>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
-
-      {/* SCROLL */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-gray-500 text-sm"
-        animate={{ y: [0, 12, 0] }}
-        transition={{ repeat: Infinity, duration: 1.5 }}
-      >
-        ↓ Scroll
-      </motion.div>
     </section>
   );
 }

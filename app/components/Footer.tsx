@@ -1,104 +1,92 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#0B0B0F] text-gray-400 border-t border-white/10 overflow-hidden">
-
-      {/* ANIMATED GLOW */}
-      <motion.div
-        animate={{ x: [0, 60, 0], y: [0, -40, 0] }}
-        transition={{ duration: 12, repeat: Infinity }}
-        className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-yellow-500/10 blur-[140px] rounded-full"
-      />
-
-      <div className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-4 gap-10">
+    <footer className="bg-[#091c30] px-[7%] pb-5 pt-16">
+      <div className="mx-auto grid max-w-[1400px] grid-cols-2 gap-8 pb-12 md:grid-cols-3 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1.1fr] lg:gap-9">
+        {/* BRAND */}
+        <div className="col-span-2 md:col-span-3 lg:col-span-1">
+          <Link href="/" className="inline-flex items-center gap-3 text-white">
+            <span className="grid h-[43px] w-[43px] place-items-center rounded-md bg-[#00875a] text-sm font-extrabold">
+              S7
+            </span>
+            <span className="font-['Manrope'] text-xl font-extrabold">
+              SAV7
+              <small className="mt-0.5 block text-[8px] tracking-wider text-[#aab9c7]">
+                IMPEX PRIVATE LIMITED
+              </small>
+            </span>
+          </Link>
+          <p className="mt-5 max-w-sm text-[11px] leading-relaxed text-[#aab9c7]">
+            A diversified India-based import and export company focused on gold,
+            precious metals, pharmaceuticals and global trade.
+          </p>
+        </div>
 
         {/* COMPANY */}
-        <div>
-          <h2 className="text-xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-yellow-400 via-yellow-200 to-yellow-500 bg-clip-text text-transparent">
-              SAV7 IMPEX
-            </span>
-          </h2>
-
-          <p className="text-sm leading-relaxed">
-            SAV7 IMPEX PRIVATE LIMITED is a leading gold import export company
-            in India, specializing in precious metals trading, silver exports,
-            and global commodity supply with certified international standards.
-          </p>
-
-          {/* SOCIAL */}
-       
+        <div className="flex flex-col gap-3">
+          <h4 className="mb-2 text-[13px] font-bold text-white">Company</h4>
+          {[
+            { label: "About Us", href: "/about" },
+            { label: "Services", href: "/services" },
+            { label: "Products", href: "/products" },
+            { label: "Contact", href: "/contact" },
+          ].map((l) => (
+            <Link key={l.href} href={l.href} className="text-[11px] text-[#aab9c7] transition hover:text-[#55d6a4]">
+              {l.label}
+            </Link>
+          ))}
         </div>
 
-        {/* QUICK LINKS */}
-        <div>
-          <h3 className="text-white font-semibold mb-4">Quick Links</h3>
-          <ul className="space-y-2 text-sm">
-            {["About", "Services", "Products", "Trust", "Contact"].map((item, i) => (
-              <li key={i}>
-                <a
-                  href={`#${item.toLowerCase()}`}
-                  className="relative hover:text-yellow-400 transition group"
-                >
-                  {item}
-                  <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-yellow-400 transition-all group-hover:w-full"></span>
-                </a>
-              </li>
-            ))}
-          </ul>
+        {/* GOLD */}
+        <div className="flex flex-col gap-3">
+          <h4 className="mb-2 text-[13px] font-bold text-white">Gold Division</h4>
+          {[
+            { label: "Gold & Bullion", href: "/gold-precious-metals" },
+            { label: "Silver Products", href: "/silver-products" },
+            { label: "Precious Metals", href: "/precious-metals" },
+            { label: "Gold Import Export", href: "/gold-import-export" },
+          ].map((l) => (
+            <Link key={l.href} href={l.href} className="text-[11px] text-[#aab9c7] transition hover:text-[#55d6a4]">
+              {l.label}
+            </Link>
+          ))}
         </div>
 
-        {/* SERVICES */}
-        <div>
-          <h3 className="text-white font-semibold mb-4">Services</h3>
-          <ul className="space-y-2 text-sm">
-            <li>Gold Trading</li>
-            <li>Silver Export</li>
-            <li>Import & Export Services</li>
-            <li>Commodity Supply</li>
-            <li>Wholesale Distribution</li>
-          </ul>
+        {/* PHARMA */}
+        <div className="flex flex-col gap-3">
+          <h4 className="mb-2 text-[13px] font-bold text-white">Pharma Division</h4>
+          {[
+            { label: "Pharmaceuticals", href: "/pharmaceuticals" },
+            { label: "Generic Medicines", href: "/generic-medicines" },
+            { label: "API Sourcing", href: "/api-sourcing" },
+            { label: "Healthcare Products", href: "/healthcare-products" },
+          ].map((l) => (
+            <Link key={l.href} href={l.href} className="text-[11px] text-[#aab9c7] transition hover:text-[#55d6a4]">
+              {l.label}
+            </Link>
+          ))}
         </div>
 
         {/* CONTACT */}
-        <div>
-          <h3 className="text-white font-semibold mb-4">Contact</h3>
-          <ul className="space-y-2 text-sm">
-            <li>Hyderabad, Telangana, India</li>
-            <li>Email: sav7impex@gmail.com</li>
-            <li>Phone: +91 92909 34388</li>
-          </ul>
-
-          {/* CTA */}
-          <a
-            href="https://wa.me/919290934388"
-            target="_blank"
-            className="relative inline-block mt-4 px-6 py-3 bg-gradient-to-r from-green-400 to-green-600 text-black rounded-lg font-semibold hover:scale-110 transition"
-          >
-            WhatsApp Now
-            <span className="absolute inset-0 bg-green-400 blur-xl opacity-20"></span>
+        <div className="flex flex-col gap-3">
+          <h4 className="mb-2 text-[13px] font-bold text-white">Get In Touch</h4>
+          <span className="text-[11px] text-[#aab9c7]">Hyderabad, Telangana, India</span>
+          <a href="tel:+919290934388" className="text-[11px] text-[#aab9c7] transition hover:text-[#55d6a4]">
+            +91 92909 34388
+          </a>
+          <a href="mailto:sav7impex@gmail.com" className="break-all text-[11px] text-[#aab9c7] transition hover:text-[#55d6a4]">
+            sav7impex@gmail.com
+          </a>
+          <a href="https://www.sav7impex.in/" className="text-[11px] text-[#aab9c7] transition hover:text-[#55d6a4]">
+            www.sav7impex.in
           </a>
         </div>
       </div>
 
-      {/* TRUST STRIP */}
-      <div className="border-t border-white/10 py-6">
-        <div className="max-w-7xl mx-auto px-6 flex flex-wrap justify-center gap-6 text-sm text-gray-500">
-          <span>✔ GST Certified</span>
-          <span>✔ IEC Registered</span>
-          <span>✔ BIS Hallmark Approved</span>
-          <span>✔ Government Authorized</span>
-          <span>✔ Global Trade Compliance</span>
-        </div>
-      </div>
-
-      {/* BOTTOM */}
-      <div className="border-t border-white/10 py-6 text-center text-sm text-gray-500">
-        © {new Date().getFullYear()} SAV7 IMPEX PRIVATE LIMITED. All rights reserved.
+      <div className="mx-auto flex max-w-[1400px] flex-col gap-3 border-t border-white/10 pt-5 text-[10px] text-[#93a6b7] md:flex-row md:justify-between">
+        <span>© {new Date().getFullYear()} SAV7 IMPEX PRIVATE LIMITED. All Rights Reserved.</span>
+        <span>India | Global Import & Export</span>
       </div>
     </footer>
   );

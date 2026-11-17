@@ -1,135 +1,155 @@
-"use client";
 
-import { motion } from "framer-motion";
-
-const certifications = [
+const complianceItems = [
   {
-    title: "GST Registered",
-    desc: "Fully compliant under Goods and Services Tax ensuring transparent and legal trading operations.",
-    icon: "📜",
+    number: "01",
+    title: "Product Documentation",
+    description:
+      "Product-specific specifications and commercial documentation for relevant transactions.",
+    icon: "📄",
+    color: "gold",
   },
   {
-    title: "IEC Certified",
-    desc: "Authorized Import Export Code enabling global trade across international markets.",
-    icon: "🌍",
+    number: "02",
+    title: "Import-Export Permissions",
+    description:
+      "Coordination of applicable permissions and requirements for international trade.",
+    icon: "✓",
+    color: "green",
   },
   {
-    title: "BIS Hallmark Approved",
-    desc: "Certified for gold and silver trading with official Bureau of Indian Standards assurance.",
-    icon: "💎",
+    number: "03",
+    title: "Regulatory & Customs",
+    description:
+      "Attention to relevant regulatory, customs and cross-border trade requirements.",
+    icon: "⚖",
+    color: "blue",
   },
   {
-    title: "Government Authorized",
-    desc: "Registered private limited company with verified operations under government authorities.",
-    icon: "🏛️",
+    number: "04",
+    title: "Business Partners",
+    description:
+      "Working with suitable suppliers and business partners for trade coordination.",
+    icon: "🤝",
+    color: "green",
   },
 ];
 
 export default function Trust() {
   return (
     <section
-      id="trust"
-      className="relative py-24 px-6 bg-[#0B0B0F] overflow-hidden"
+      id="compliance"
+      className="relative isolate overflow-hidden bg-[#f7f9fb] px-5 py-20 sm:px-8 lg:px-[7%] lg:py-28"
     >
-      {/* ANIMATED GLOW */}
-      <motion.div
-        animate={{ x: [0, -60, 0], y: [0, 40, 0] }}
-        transition={{ duration: 12, repeat: Infinity }}
-        className="absolute w-[500px] h-[500px] bg-yellow-500/10 blur-[140px] rounded-full top-[-100px] right-[-100px]"
-      />
+      {/* BACKGROUND DECORATION */}
+      <div className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-[#00875a]/[0.05] blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-[#b68b31]/[0.05] blur-3xl" />
 
-      <div className="max-w-7xl mx-auto text-center">
+      <div className="relative z-10 mx-auto max-w-[1250px]">
 
         {/* HEADING */}
-        <motion.h2
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          className="text-4xl md:text-5xl font-bold"
-        >
-          <span className="bg-gradient-to-r from-yellow-400 via-yellow-200 to-yellow-500 bg-clip-text text-transparent">
-            Trusted & Certified
+        <div className="mx-auto mb-14 max-w-[800px] text-center">
+          <span className="inline-flex items-center gap-2 rounded-full border border-[#00875a]/15 bg-[#eaf7f1] px-4 py-2 text-[10px] font-extrabold tracking-[2px] text-[#00875a]">
+            <span className="h-2 w-2 rounded-full bg-[#00875a]" />
+            QUALITY & REGULATORY COMPLIANCE
           </span>
-        </motion.h2>
 
-        {/* SEO TEXT */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="mt-4 text-gray-400 max-w-2xl mx-auto"
-        >
-          As a leading gold import export company in India, we operate with full
-          GST registration, IEC certification, BIS approval, and government
-          authorization ensuring secure and compliant global trading.
-        </motion.p>
+          <h2 className="mt-6 font-[Manrope] text-3xl font-extrabold leading-tight tracking-tight text-[#102b46] sm:text-4xl lg:text-[46px]">
+            Responsible Trade.
+            <span className="block text-[#00875a]">
+              Appropriate Compliance.
+            </span>
+          </h2>
 
-        {/* CARDS */}
-        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-          {certifications.map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-              whileHover={{ scale: 1.05 }}
-              className="group p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl hover:border-yellow-400 hover:shadow-[0_0_50px_rgba(255,215,0,0.2)] transition relative"
-            >
-              {/* ICON */}
-              <motion.div
-                whileHover={{ rotate: 10, scale: 1.2 }}
-                className="text-3xl mb-4"
-              >
-                {item.icon}
-              </motion.div>
-
-              {/* TITLE */}
-              <h3 className="text-lg font-semibold text-white group-hover:text-yellow-400 transition">
-                {item.title}
-              </h3>
-
-              {/* DESC */}
-              <p className="mt-3 text-gray-400 text-sm leading-relaxed">
-                {item.desc}
-              </p>
-
-              {/* CARD GLOW */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition bg-yellow-400/5 blur-xl rounded-2xl"></div>
-            </motion.div>
-          ))}
+          <p className="mx-auto mt-5 max-w-[750px] text-sm leading-8 text-[#718096] sm:text-[15px]">
+            Precious metals and pharmaceutical products are subject to
+            different legal, licensing, customs and regulatory requirements.
+            Every transaction must comply with applicable Indian laws and
+            the destination or origin country's regulations.
+          </p>
         </div>
 
-        {/* TRUST STRIP */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          className="mt-16 flex flex-wrap justify-center gap-6 text-sm text-gray-500"
-        >
-          <span>✔ Secure Transactions</span>
-          <span>✔ Verified Business</span>
-          <span>✔ Global Trade Compliance</span>
-          <span>✔ 100% Transparency</span>
-        </motion.div>
+        {/* COMPLIANCE CARDS */}
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {complianceItems.map((item) => {
+            const accent =
+              item.color === "gold"
+                ? "#b68b31"
+                : item.color === "blue"
+                ? "#287caa"
+                : "#00875a";
 
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="mt-12"
-        >
-          <a
-            href="https://wa.me/919290934388"
-            target="_blank"
-            className="relative px-10 py-4 bg-gradient-to-r from-yellow-400 to-yellow-600 text-black rounded-xl font-semibold hover:scale-110 transition"
-          >
-            Verify & Connect Now
+            const light =
+              item.color === "gold"
+                ? "bg-[#fbf5e9]"
+                : item.color === "blue"
+                ? "bg-[#edf5fa]"
+                : "bg-[#eaf7f1]";
 
-            {/* GLOW */}
-            <span className="absolute inset-0 bg-yellow-400 blur-xl opacity-20"></span>
-          </a>
-        </motion.div>
+            return (
+              <article
+                key={item.number}
+                className="group rounded-xl border border-[#e7ecf1] bg-white p-7 shadow-[0_8px_30px_rgba(16,43,70,0.035)] transition-all duration-300 hover:-translate-y-2 hover:border-[#00875a]/30 hover:shadow-[0_20px_40px_rgba(16,43,70,0.08)] sm:p-8"
+              >
+                <div className="mb-7 flex items-center justify-between">
+                  <span
+                    className="font-[Manrope] text-3xl font-extrabold"
+                    style={{ color: `${accent}50` }}
+                  >
+                    {item.number}
+                  </span>
+
+                  <span
+                    className={`flex h-14 w-14 items-center justify-center rounded-xl text-2xl transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110 ${light}`}
+                    style={{ color: accent }}
+                  >
+                    {item.icon}
+                  </span>
+                </div>
+
+                <div
+                  className="mb-3 h-[3px] w-10 rounded-full transition-all duration-300 group-hover:w-16"
+                  style={{ backgroundColor: accent }}
+                />
+
+                <h3 className="font-[Manrope] text-base font-extrabold leading-snug text-[#102b46]">
+                  {item.title}
+                </h3>
+
+                <p className="mt-3 text-[12px] leading-[1.9] text-[#718096] sm:text-[13px]">
+                  {item.description}
+                </p>
+              </article>
+            );
+          })}
+        </div>
+
+        {/* IMPORTANT COMPLIANCE NOTICE */}
+        <div className="mt-10 overflow-hidden rounded-xl border border-[#b68b31]/20 bg-white shadow-sm">
+          <div className="flex flex-col gap-5 p-6 sm:p-8 md:flex-row md:items-start">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-[#fbf5e9] text-2xl text-[#b68b31]">
+              !
+            </div>
+
+            <div>
+              <span className="text-[9px] font-extrabold tracking-[2px] text-[#b68b31]">
+                IMPORTANT INFORMATION
+              </span>
+
+              <h3 className="mt-2 font-[Manrope] text-lg font-extrabold text-[#102b46]">
+                Compliance Depends on Each Transaction
+              </h3>
+
+              <p className="mt-3 text-[12px] leading-7 text-[#718096] sm:text-[13px]">
+                Certifications and regulatory approvals are subject to actual
+                company and product documentation. Applicable requirements
+                may vary depending on the product, transaction and countries
+                involved.
+              </p>
+            </div>
+          </div>
+
+          <div className="h-1 w-full bg-gradient-to-r from-[#b68b31] via-[#00875a] to-[#102b46]" />
+        </div>
 
       </div>
     </section>
